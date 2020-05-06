@@ -1,0 +1,33 @@
+<div class="card">
+    <div class="card-body">
+        <h2>Add a new Plant</h2>
+        <form action="" class="form" #newForm="ngForm" (ngSubmit)="insertPlant(newForm)">
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input name="nombre" id="nombre" type="text" class="form-control" [(ngModel)]="plant.nombre">
+            </div>
+            <div class="form-group">
+                <label for="descripcion">Descripcion</label>
+                <input name="descripcion" id="descripcion" type="text" class="form-control" [(ngModel)]="plant.descripcion">
+            </div>
+            <div class="form-group">
+                <label for="tipoTierra">Tipo de tierra</label>
+                <select class="form-control" name="tipoTierra" id="tipoTierra" [(ngModel)]="plant.tipo_tierra">
+                    <option value="Arenoso">Arenoso</option>
+                    <option value="Franco">Franco</option>
+                    <option value="Arcilloso">Arcilloso</option>
+                    <option value="Franco Arenoso">Franco Arenoso con Materia Orgánica</option>
+                </select>
+                
+            </div>
+            <div class="form-group">
+                <label for="historico">Datos historicos</label>
+                <input name="historico" id="historico" type="text" class="form-control" [(ngModel)]="plant.historico">
+            </div>
+            <div class="fomr-group ">
+                <button type="submit" class="btn btn-primary">Add</button>
+            </div>
+
+        </form>
+    </div>
+</div>

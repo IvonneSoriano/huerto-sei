@@ -1,0 +1,28 @@
+<section>
+    <div class="row">
+        <div class="col-lg-5 info">
+            <h2>{{usuario}}</h2>
+            <h4 class="mt-5 mb-4">Change your password</h4>
+            <form action="" class="form" #changeForm="ngForm">
+                <div class="form-group">
+                    <label for="password">Write your current password</label>
+                    <input type="password" class="form-control" placeholder="Current password" name="password" id="password" [(ngModel)]="datos.passwordOld" required>
+                </div>
+                <div class="form-group">
+                    <label for="npassword">Write your new password</label>
+                    <input type="password" class="form-control" placeholder="New password" name="password" id="password"  [(ngModel)]="datos.passwordNew" required>
+                </div>
+                <div class="form-group">
+                    <label for="rnpassword">Confirm your new password</label>
+                    <input type="password" class="form-control" placeholder="New password" name="password" id="password"  [(ngModel)]="confirm" required> 
+                </div>
+                <div class="form-group text-center">
+                    <button class="btn btn-block btn-secondary" (click)="change(changeForm)">Change password</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-7 img">
+            <img src="assets/gardeners.png" alt="">
+        </div>
+    </div>
+</section>

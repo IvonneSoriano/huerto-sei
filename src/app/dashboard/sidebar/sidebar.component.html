@@ -1,0 +1,46 @@
+<div class="sidebar" #side>
+  <button class="closeButton" (click)="onClose()">
+    <img src="assets/icons/close.svg" alt="">
+  </button>
+  <div class="logo">
+    <img src="assets/logo.png" alt="" />
+    <p>Hello plants</p>
+  </div>
+  <a routerLink='/dashboard' routerLinkActive="active"
+    ><li>
+      <img src="assets/icons/home.svg" alt="" />
+      <p>Dashboard</p>
+    </li></a
+  >
+  <a routerLink="/plants" routerLinkActive="active"
+    ><li>
+      <img src="assets/icons/plant.svg" alt="" />
+      <p>My plants</p>
+    </li></a
+  >
+  <!-- <a
+    ><li>
+      <img src="assets/icons/history.svg" alt="" />
+      <p>History</p>
+    </li></a
+  > -->
+  <a routerLink="/country" routerLinkActive="active"
+    ><li>
+      <img src="assets/icons/water.svg" alt="" />
+      <p>P2P</p>
+    </li></a
+  >
+  <a routerLink="/profile" routerLinkActive="active"
+    ><li>
+      <img src="assets/icons/cogwheel.svg" alt="" />
+      <p>Settings</p>
+    </li></a
+  >
+  <a (click)="logOut()"
+  ><li>
+    <img src="assets/icons/logout.svg" alt="" />
+    <p>Log out</p>
+  </li></a
+>
+  <nav></nav>
+</div>

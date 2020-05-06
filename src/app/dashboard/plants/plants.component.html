@@ -1,0 +1,64 @@
+
+<section>
+    <app-card-plant></app-card-plant>
+    <div class="row">
+        <div class="col-lg-12 d-flex justify-content-end mt-3 mb-5Par">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#newPlantModal">
+                <img src="assets/icons/plus.svg" alt="">New Plant</button>
+        </div>
+        <div class="col-12 table-container mt-5">
+            <table  class="table table-sm" *ngIf="plants.length > 0; else noPlants">
+                <thead>
+                    <th>id</th>
+                    <th>Nombre</th>
+                    <!-- <th>Tipo de tierra</th> -->
+                    <th>Tierra</th>
+                    <th>Estatus </th>
+                    <th>Parametros</th>
+                    <th></th>
+                    <th></th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let plant of plants">
+                        <td>{{ plant.id }}</td>
+                        <td>{{ plant.nombre }}</td>
+                        <td>{{ plant.tipo_tierra }}</td>
+                        <td>{{ plant.estatus == 1 ? 'Activo' : 'No Activo' }}</td>
+                        <td><button class="btn btn-secondary" data-toggle="modal"  (click)="passParam(plant.id)" data-target="#parameterModal">
+                            <img src="assets/icons/plus.svg" alt="">
+                            Add </button></td>
+                            <td>
+                                <!-- <button class="btn btn-danger"><img src="assets/icons/trash.svg" alt="">Delete </button> -->
+                                <button class="btn btn-primary" (click)="navigate(plant.id)">
+                                    <img src="assets/icons/leaf.svg" alt="">
+                                    View </button>
+                            </td>
+                    </tr>
+                </tbody>
+            </table>
+            <ng-template #noPlants>
+                <div class="text-center no-plant">
+                <h3>Aun no tienes plantas registradas.</h3>
+                <p>Siembra alguna</p>
+                <img src="assets/planting.png" alt="">
+            </div>
+              </ng-template>
+        </div>
+    </div>
+</section>
+
+<div class="modal fade" id="newPlantModal" tabindex="-1" role="dialog" aria-labelledby="newPlantModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content nb">
+        <div class="modal-body">
+            <div>
+            <button type="button" #closeNew class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          <app-new-plant-form (propagar)="closeModal()"></app-new-plant-form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-modal-parameters [planta]="selectedPlant"></app-modal-parameters>

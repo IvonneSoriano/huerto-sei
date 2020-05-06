@@ -1,1 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
+$olive : #2A4115;
+$lime : #82C20A;
+$sky: #B4F3F0;
+$blue : #0063B8;
+$ocean: #022747;
+
+.logo{
+    display: flex;
+    align-items: center;
+    p{
+        color: $lime;
+        margin: 0;
+        font-weight: bold;
+        font-size: 25px;
+    }
+    img{
+        max-height: 100%;
+    }
+}
+
+.btn{
+    padding: 5px 20px;
+}
+.btn-primary{
+    background-color: $blue;
+    border-color: $blue;
+
+}
+.btn-secondary{
+    background-color: $lime!important;
+    border-color: $lime!important;
+    &:hover{
+        background-color: rgba($color: $lime, $alpha: 0.9)!important;
+    border-color: $lime!important;
+    }
+    &:focus{
+        background-color: $lime!important;
+        border-color: $lime!important;
+        box-shadow: 0 0 0 0.2rem rgba($color:$lime,$alpha:.5)!important;
+    }
+}
+
+// .btn-
+
+section{
+    padding: 20px;
+    min-height: 622px;
+    .row{
+        margin: 0;
+    }
+}   

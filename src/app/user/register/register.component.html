@@ -1,0 +1,87 @@
+<form class="form" [formGroup]="formRegister" (ngSubmit)="register()">
+  <h1 class="text-center">Register</h1>
+  <p>
+    Crea una cuenta para empezar a cuidar mejor de tus plantas y llevar su control
+  </p>
+  <div class="form-group">
+    <input
+      type="text"
+      formControlName="user"
+      class="form-control"
+      placeholder="User"
+      name="user"
+      id="user"
+    />
+    <div
+      *ngIf="user.invalid && (user.dirty || user.touched)"
+      class="alert alert-danger"
+    >
+      <div *ngIf="user.errors.required">
+        Name is required.
+      </div>
+      <div *ngIf="user.errors.minlength">
+        Name must be at least 8 characters long.
+      </div>
+      <div *ngIf="user.errors.pattern">
+        Name cannot contain numbers.
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <input
+      type="password"
+      formControlName="password"
+      class="form-control"
+      placeholder="Password"
+      name="password"
+      id="password"
+    />
+    <div
+      *ngIf="password.invalid && (password.dirty || password.touched)"
+      class="alert alert-danger"
+    >
+      <div *ngIf="password.errors.required">
+        Password is required.
+      </div>
+      <div *ngIf="password.errors.minlength">
+        Password must be at least 8 characters long.
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <input
+      type="password"
+      formControlName="cpassword"
+      class="form-control"
+      placeholder="Confirm your password"
+      name="cpassword"
+      id="cpassword"
+    />
+    <div
+      *ngIf="checarSiSonIguales() || (cpassword.invalid && (cpassword.dirty || cpassword.touched) )"
+      class="alert alert-danger"
+    >
+     
+      <div *ngIf="checarSiSonIguales()">
+        The password must be matched with this one
+      </div>
+
+      <div *ngIf="cpassword.errors.required">
+        Confirm password is required.
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group text-center">
+    <button
+      [disabled]="formRegister.invalid"
+      type="submit"
+      class="btn btn-block btn-primary"
+    >
+      Register
+    </button>
+  </div>
+  <div class="form-group text-center">
+    <a routerLink="/login">Do you have an account? Login here</a>
+  </div>
+</form>

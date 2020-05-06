@@ -1,0 +1,50 @@
+<section>
+    <h1>Plants to Plant</h1>
+    <p class="mt-4">Selecciona el nombre de un departamento para ver las plantas que puedes sembrar en él.</p>
+    <div class="map mt-4">
+    <img src="assets/esablue.png" alt="" usemap="#esa">
+    <map name="esa">
+        <area title="Santa Ana" shape="circle" coords="147,120,40" (click)="showPlants('sa')"   data-toggle="modal" data-target="#exampleModal"/>
+        <area title="Sonsonate" shape="circle" coords="130,220,40" (click)="showPlants('s')"   data-toggle="modal" data-target="#exampleModal"/>
+        <area title="Ahuchapan" shape="circle" coords="50,190,40" (click)="showPlants('a')"   data-toggle="modal" data-target="#exampleModal"/>
+        <area title="Chalatenango" shape="circle" coords="290,80,40" (click)="showPlants('ch')"   data-toggle="modal" data-target="#exampleModal"/>
+        <area title="La Libertad" shape="circle" coords="205,245,40" (click)="showPlants('ll')"   data-toggle="modal" data-target="#exampleModal"/>
+        <area title="San Salvador" shape="circle" coords="275,205,40" (click)="showPlants('ss')"   data-toggle="modal" data-target="#exampleModal"/>
+        <area title="La Paz" shape="circle" coords="320,280,40" (click)="showPlants('lp')"   data-toggle="modal" data-target="#exampleModal"/>
+        <area title="Cuscatlan" shape="circle" coords="295,150,40" (click)="showPlants('cs')"   data-toggle="modal" data-target="#exampleModal"/>
+        <area title="Cabañas" shape="circle" coords="380,155,40" (click)="showPlants('c')"   data-toggle="modal" data-target="#exampleModal"/>
+        <area title="San Vicente" shape="circle" coords="395,230,40" (click)="showPlants('sv')"   data-toggle="modal" data-target="#exampleModal"/>
+        <area title="Usulutan" shape="circle" coords="435,315,40" (click)="showPlants('u')"   data-toggle="modal" data-target="#exampleModal"/>
+        <area title="San Miguel" shape="circle" coords="530,288,40" (click)="showPlants('sm')"   data-toggle="modal" data-target="#exampleModal"/>
+        <area title="Morazan" shape="circle" coords="560,208,40" (click)="showPlants('m')"   data-toggle="modal" data-target="#exampleModal"/>
+        <area title="La Union" shape="circle" coords="600,280,40" (click)="showPlants('lu')"   data-toggle="modal" data-target="#exampleModal"/>
+    </map>
+</div>
+
+    </section>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">
+                  <th>Plantas para sembrar</th>
+                </h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-striped">
+                <tbody class="">
+                    <tr *ngFor="let plant of plants">
+                        <td>{{plant}}</td>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>

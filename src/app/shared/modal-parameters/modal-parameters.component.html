@@ -1,0 +1,38 @@
+<div class="modal fade" id="parameterModal" tabindex="-1" role="dialog" aria-labelledby="parameterModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content nb">
+      
+        <div class="modal-body row">
+            <div class="col-lg-12 bt">
+                <button type="button" #close class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+            </div>
+            <form action="" class="form col-lg-12">
+          <h3>Add Parameters</h3>
+          
+            <div class="form-group">
+                <label for="date">Date</label>
+                <input type="date" class="form-control" name="date" id="date" [(ngModel)]="historico.fecha">
+            </div>
+                <div class="form-group ">
+                    <label for="temperatura">Temperatura [Cº]</label>
+                    <input type="number" min="0" max="100" class="form-control" name="temperatura" id="temperatura" [(ngModel)]="historico.temperatura">
+                </div>
+                <div class="form-group ">
+                    <label for="humedad">Humedad [kPa]</label>
+                    <input type="number" min="0" max="100" class="form-control" name="humedad" id="humedad" [(ngModel)]="historico.humedad">
+                </div>
+                <div class="form-group ">
+                    <label for="luz_solar">Luz Solar [kPa]</label>
+                    <input type="number" min="0" max="100" class="form-control" name="luz_solar" id="luz_solar" [(ngModel)]="historico.luz_solar">
+                </div>
+                
+                <div class="fomr-group ">
+                    <button class="btn btn-primary" (click)="addParam()">Add</button>
+                </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

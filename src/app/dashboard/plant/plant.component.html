@@ -1,0 +1,58 @@
+<section>
+    <h1>{{plant.nombre}}</h1>
+    <div class="plantita">
+        <button class="btn btn-primary btn-add" data-toggle="modal" data-target="#parameterModal" >
+            <img src="assets/icons/plus.svg" alt="">
+            Add </button>
+            <button class="btn btn-primary btn-water " (click)="passHum()">
+                <img src="assets/icons/watering.svg" alt="">
+                Humedad </button>
+        <div class="circle">
+            <img src="assets/plant1.png" alt="">
+        </div>
+        <button class="btn btn-primary btn-sun" (click)="passSol()">
+            <img src="assets/icons/sun.svg" alt="">
+            Luz solar </button>
+            <button class="btn btn-primary btn-temp" (click)="passTemp()">
+                <img src="assets/icons/hot.svg" alt="">
+                Temperatura </button>
+    </div>
+<!-- <div class="bar">
+    <canvas baseChart
+    [datasets]="barChartData"
+    [labels]="barChartLabels"
+    [options]="barChartOptions"
+    [legend]="barChartLegend"
+    [chartType]="barChartType">
+</canvas>
+</div> -->
+<div class="line mt-5" >
+    <canvas #lineChart >{{ chart }}</canvas>
+</div>
+</section>
+
+<div class="panel">
+    <button class="preButton" (click)="togglePar()">
+        <img src="assets/icons/prediction.svg" alt="">
+    </button>
+<div class=" infoP" #side>
+    <div>
+    <h2>Predicciones</h2>
+    <form action="" class="form mt-3">
+        <div class="form-group">
+            <label for="dias"> Ingrese la cantidad de dias para predecir</label>
+            <input type="number" name="dias" id="dias" class="form-control" placeholder="Ex. 60 para 2 meses" min="1" [(ngModel)]="days" required>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" (click)="getPrediction()">Predecir</button>
+        </div>
+    </form>
+
+    <div class="prediction" *ngIf="prediccion">
+        <h4>{{prediccion}}</h4>
+        <img src="assets/pre.png" alt="">
+    </div>
+</div>
+</div>
+</div>
+<app-modal-parameters [planta]="plant.id" (propagar)="refresh()"></app-modal-parameters>

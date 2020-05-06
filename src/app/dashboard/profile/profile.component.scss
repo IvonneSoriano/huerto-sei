@@ -1,0 +1,30 @@
+$olive : #2A4115;
+$lime : #82C20A;
+$sky: #B4F3F0;
+$blue : #0063B8;
+$ocean: #022747;
+
+
+section{
+    .row{
+        .img{
+            img{
+                max-width: 100%;
+                max-height: 575px;
+            }
+        }
+        .info{
+            h2{
+                color: $lime;
+            }
+            h4{
+                color: $olive;
+            }
+            .form{
+                label{
+                    color: $olive;
+                }
+            }
+        }
+    }
+}

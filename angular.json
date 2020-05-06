@@ -28,9 +28,15 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/alertifyjs/build/css/alertify.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/chart.js/dist/Chart.js",
+              "node_modules/alertifyjs/build/alertify.js"
+            ]
           },
           "configurations": {
             "production": {

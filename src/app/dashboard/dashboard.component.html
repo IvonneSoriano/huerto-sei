@@ -1,0 +1,13 @@
+<div class="dash container-fluid">
+    <div class="sidebar" #sidebar>
+        <app-sidebar  #side (closeMenu)="toggleSidebar(side)"></app-sidebar>
+    </div>
+    <div class="panel" #panel>
+        <div class="bar">
+            <button class="toggleSidebar" (click)="toggleSidebar(side)">
+                <img src="assets/icons/menu.svg" alt="">
+            </button>
+        </div>
+        <router-outlet></router-outlet>
+    </div>
+</div>

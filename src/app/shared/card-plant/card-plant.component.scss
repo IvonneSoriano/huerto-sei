@@ -1,0 +1,49 @@
+$olive : #2A4115;
+$lime : #82C20A;
+$sky: #B4F3F0;
+$blue : #0063B8;
+$ocean: #022747;
+
+.slide {
+    padding: 0px 10px 10px 0;
+    outline: none;
+
+
+    .card {
+        border: none;
+        // margin-right: 25px;
+        box-shadow: 0 0 10px rgba($color: black, $alpha: 0.01);
+
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            img {
+                width: 150px;
+            }
+
+            h3 {
+                
+                    outline: none;
+                    color: rgba($color: $olive, $alpha: 0.7);
+                
+            }
+        }
+
+        &:hover {
+                box-shadow: 0 0 10px rgba($color: black, $alpha: 0.09);
+            .card-body {
+                img {
+                    transform: scale(1.1);
+                }
+
+                h3{
+                        color: $olive;
+                    
+                }
+            }
+
+        }
+    }
+}

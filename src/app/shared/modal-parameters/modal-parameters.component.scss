@@ -1,0 +1,28 @@
+$olive : #2A4115;
+$lime : #82C20A;
+$sky: #B4F3F0;
+$blue : #0063B8;
+$ocean: #022747;
+.nb{
+    background-color: rgba(0,0,0,0);
+    border: none;
+}
+.bt{
+    margin: 0;
+    padding: 0;
+}
+.close{
+    opacity: 1;
+    color: white;
+}
+.form{
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.09);
+    margin: 20px auto;
+    max-width: 475px;
+    padding: 1.25rem;
+    border-radius: .25rem;
+}
+h2{
+    color: $ocean;
+}
